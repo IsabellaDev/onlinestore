@@ -1,0 +1,25 @@
+<div id="promotion">
+    <img src="/img/promotion.JPG"width="100%">
+</div>
+
+
+<div id="category">
+    {{#each categories}}
+        <div>
+            <h4>{{this.description}}</h4>
+            <img src="{{this.src}}" style="width: 90%"><br>
+            <a href="">{{this.link}}</a>
+        </div>
+    {{/each}}
+</div>
+
+<h3>Best Sellers</h3>
+
+<div id="bestSeller">
+    {{#each bestSellers}}
+        <div>
+            <a href=""><img src="{{this.src}}"></a>       
+        </div>
+    {{/each}}
+
+</div>

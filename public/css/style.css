@@ -1,0 +1,170 @@
+*
+{
+    padding:0;
+    margin:0;
+}
+
+
+body
+{
+    width: 100%;
+    font-size: 1.4rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: RGB(235, 236, 236);
+}
+
+h1,h2,h3,h4
+{
+    margin-bottom: 16px;
+}
+
+p{
+    margin-bottom: 8pxs;
+}
+
+
+main
+{
+    padding:16px 32px;
+    width: 95%;
+    text-align: center;
+}
+header
+{
+    width: 100%;
+    background-color: #344763;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+header h1 
+{
+    font-size:1.5rem;
+    padding:16px 32px;
+    color:#fff;
+}
+
+nav, #footer2
+{
+    justify-self: end;
+}
+
+nav > ul > li
+{
+    display: inline-block;
+    padding: 16px 32px;
+}
+
+nav > ul > li > a
+
+{
+    color:#fff;
+    text-decoration: none;
+    
+}
+
+a{
+    text-decoration: none;
+
+}
+
+footer
+{
+    width: 100%;
+    background-color: #344763;
+    color:#fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: left;
+    align-items: center;
+    /*padding:16px 32px;*/
+}
+
+
+i
+{
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 16px 32px;
+}
+#loginForm, #registrationForm {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    text-align: left;
+    margin: 20px 0;
+}
+form > label {
+    font-size: 1.3rem;
+}
+/*form{
+    text-align: left;
+    border: 0.1px solid #666;
+    margin: 20px;
+}*/
+
+input
+{
+    width: 60%;
+    height: 5vh;
+    border-radius: 5px;
+    margin: 16px;
+    font-size: 1.0rem;
+} 
+
+input[type="submit"] {
+    background-color: RGB(236, 201, 125);
+}
+
+
+#category{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px auto 50px;
+
+}
+#category > div {
+    padding: 20px 10px;
+    background-color: #fff;
+}
+
+#bestSeller{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #fff;
+}
+
+banner {
+    background-color: #435698;
+    display:grid;
+    color: RGB(235, 236, 236);
+    height: 15vh;
+    margin: 0;
+ 
+}
+
+#list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#list > div{
+    background-color: #fff;
+    margin: 8px;
+
+}
+#list > div :hover {
+    border: thin solid #435698;
+    border-radius: 3px;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 1rem;
+    margin: 3px;
+    text-align: left;
+}
