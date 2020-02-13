@@ -2,15 +2,24 @@
     <h2 style="margin-top: 20px">Amazon BestSellers</h2>
     <h4>Our most popular products based on sales. Updated hourly.</h4>
 </banner>
-
-<div id="list">
-    {{#each list}}
+<div id="pros">
+    <div id="sidebar">
+        <h4><a href="/products">All Products</a></h4>
+            <a href="/products">Amazon Devices</a>
         
-    <div class="listDetails">
-        <img src="{{this.src}}"><br>
-
-        <a href=""><p>{{this.des}}</p></a>
-        <p>CDN$ {{this.price}}</p>
+            <a href="/">Books</a>
+            <a href="/">Baby's Clothing</a>
     </div>
-    {{/each}}
+        
+    <div id="list">
+        {{#each list}}
+        <div class="listDetails">
+            <img src="{{this.src}}"><br>
+
+            <a href=""><p>{{this.des}}</p></a>
+            <p>CDN$ {{this.price}}</p>
+           
+        </div>
+        {{/each}}
+    </div>
 </div>

@@ -15,6 +15,7 @@ body
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     background-color: RGB(235, 236, 236);
+
 }
 
 h1,h2,h3,h4
@@ -93,19 +94,16 @@ i
     padding: 16px 32px;
 }
 #loginForm, #registrationForm {
+    width: 80%;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     text-align: left;
-    margin: 20px 0;
+    margin: 25px auto;
 }
 form > label {
     font-size: 1.3rem;
 }
-/*form{
-    text-align: left;
-    border: 0.1px solid #666;
-    margin: 20px;
-}*/
+
 
 input
 {
@@ -148,6 +146,7 @@ banner {
 }
 
 #list{
+    margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -155,16 +154,35 @@ banner {
 #list > div{
     background-color: #fff;
     margin: 8px;
+    
 
 }
-#list > div :hover {
-    border: thin solid #435698;
-    border-radius: 3px;
+.listDetails:hover, #sidebar a:hover{
+
     text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1, 1.1);
 }
+
 
 p {
     font-size: 1rem;
     margin: 3px;
+    text-align: left;
+}
+
+#pros {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+
+#sidebar {
+    background-color: #fff;
+    margin: 28px auto;
+}
+#sidebar > h4, #sidebar> a {
+    display: block;
     text-align: left;
 }
