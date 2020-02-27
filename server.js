@@ -6,11 +6,15 @@ const exphbs= require("express-handlebars");
 
 const model=require("./model/products.js");
 
+const bodyParser=require('body-parser');
+
 //This tells express to set up our template engine has handlebars
 app.engine("handlebars",exphbs());
 app.set("view engine", "handlebars");
 
 app.use(express.static("public"));
+
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.get("/", (req,res)=>{
 
@@ -43,6 +47,10 @@ app.get("/login", (req,res)=>{
         title: "Login Page",
         heading: "Amazon.ca"
     });
+});
+
+app.post("/login", (req,res)=>{
+    console.log(req.body);
 });
 
 const PORT = process.env.PORT || 3000;
