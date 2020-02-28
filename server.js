@@ -50,7 +50,26 @@ app.get("/login", (req,res)=>{
 });
 
 app.post("/login", (req,res)=>{
-    console.log(req.body);
+    let errorE=[];let errorP=[];
+    if(req.body.email==""){
+        errorE.push("! Please enter a valid email");
+    }
+    if(req.body.password==""){
+        errorP.push("! Please enter your password");
+    }
+
+    if ((errorE!="") || (errorP!="")){
+      res.render("login",{
+            title:"Login Page",
+            heading: "Amazon.ca",
+            errorE: errorE,
+            errorP: errorP
+        });
+    }
+    else {
+        res.redirect("/");
+    }
+
 });
 
 const PORT = process.env.PORT || 3000;

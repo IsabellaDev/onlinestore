@@ -190,6 +190,10 @@ p {
     width: 10%;
 }
 
+.errors{
+    color: red;
+}
+
 @media(max-width: 1024px) {
     #logo{
         width: 30%;
