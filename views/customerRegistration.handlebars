@@ -4,19 +4,24 @@
     <h2>Create account</h2>
     <label for="firstName">First Name</label><br>  
     <input type="text" id="firstName" name="firstName"> <br>
+    <div class="errors">{{errorFName}}</div>
 
     <label for="lastName">Last Name</label><br>    
     <input type="text" id="lastName" name="lastName"><br>
+    <div class="errors">{{errorLName}}</div>
 
     <label for="email">Email</label><br>
     <input type="email" id="email" name="email"><br>
+    <div class="errors">{{errorE}}</div>
 
     <label for="password">Password</label><br>
     <input type="password" id="password" name="password" placeholder="At least 6 characters"><br>
+    <div class="errors">{{errorP}}</div>
     <label>Password must consist of at least 6 characters.</label><br>
 
     <label for="passwordAgain">Password Again</label><br>
     <input type="password" id="passwordAgain" name="passwordAgain"><br>
+    <div class="errors">{{errorPP}}</div>
   
     <input type="submit" value="Create your Amazon account"><br>
 

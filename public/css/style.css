@@ -192,6 +192,7 @@ p {
 
 .errors{
     color: red;
+    font-style: italic;
 }
 
 @media(max-width: 1024px) {
