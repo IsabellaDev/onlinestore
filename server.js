@@ -80,7 +80,7 @@ app.post("/customerRegistration", (req, res) => {
     if (req.body.email == "") {
         errorE = "! Please enter your Email Address";
     }
-    if (req.body.password.length < 6 || req.body.password > 12) {
+    if (req.body.password.length < 6 || req.body.password.length > 12) {
         errorP = "! The password must be 6 to 12 characters";
     }
     else if (req.body.password != req.body.passwordAgain) {
@@ -120,7 +120,7 @@ app.post("/customerRegistration", (req, res) => {
         //Asynchornous operation (no exact executing time
         sendEmail.send(msg)
         .then(()=>{
-            res.redirect("/"); // need to be CHANGED TO A DASHBOARD PAGE LATER!!!!!!!!/////
+            res.redirect("welcome"); // need to be CHANGED TO A DASHBOARD PAGE LATER!!!!!!!!/////
     
         })
         .catch(err=>{
