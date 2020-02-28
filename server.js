@@ -100,7 +100,33 @@ app.post("/customerRegistration", (req, res) => {
         });
     }
     else {
-        res.redirect("/");
+        const {firstName, lastName, email, password}=req.body;
+        const sendEmail=require('@sendgrid/mail');
+        sendEmail.setApiKey(process.env.SEND_GRID_API_KEY);
+
+        const msg={
+            to: `${email}`,
+            from: `dearduck@126.com`,
+            subject: 'You have registered successfully!',
+            html:
+            `Hi Dear ${firstName} ${lastName}, <br>
+            Thank you for choosing our service, and you have successfully registered as a member now!<br>
+            Congratulations and enjoy your journey with our website!<br>
+            <br>
+            Best regards,<br>
+            Customer Service Team`
+        };
+
+        //Asynchornous operation (no exact executing time
+        sendEmail.send(msg)
+        .then(()=>{
+            res.redirect("/"); // need to be CHANGED TO A DASHBOARD PAGE LATER!!!!!!!!/////
+    
+        })
+        .catch(err=>{
+            console.log(`Error ${err}`);
+        })
+
     }
 
 });
