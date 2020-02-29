@@ -4,13 +4,15 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.render("customerRegistration", {
         title: "Customer Registration Page",
-        heading: "Amazon.ca"
+        heading: "Up In The Air Online Store"
     });
 });
 router.post("/", (req, res) => {
     let errorFName = "", errorLName = "", errorE = "", errorP = "", errorPP = "";
+    let c ={borderfn:"", borderln:"", borderEmail:"", borderPwd:"", borderPwdAgn:""};
     if (req.body.firstName == "") {
         errorFName = "! Please enter your First Name";
+        c.borderfn="red";
     }
     else {
         let valid = false;
@@ -22,10 +24,12 @@ router.post("/", (req, res) => {
         }
         if (!valid) {
             errorFName = "! First Name should only contain letters, please try again";
+            c.borderfn="red";
         }
     }
     if (req.body.lastName == "") {
         errorLName = "! Please enter your Last Name";
+        c.borderln="red";
     }
     else {
         let valid = false;
@@ -37,25 +41,29 @@ router.post("/", (req, res) => {
         }
         if (!valid) {
             errorLName = "! Last Name should only contain letters, please try again";
+            c.borderln="red";
         }
     }
     if (req.body.email == "") {
         errorE = "! Please enter your Email Address";
+        c.borderEmail="red";
     }
     if (req.body.password.length < 6 || req.body.password.length > 12) {
         errorP = "! The password must be 6 to 12 characters";
+        c.borderPwd="red";
     }
     else if (req.body.password != req.body.passwordAgain) {
         errorPP = "! The password entered does not match, please try again";
+        c.borderPwdAgn="red";
     }
 
 
     const {firstName, lastName, email, password, passwordAgain}=req.body;
-    
+
     if (errorFName != "" || errorLName != "" || errorE != "" || errorP != "" || errorPP != "") {
         res.render("customerRegistration", {
             title: "Customer Registration Page",
-            heading: "Amazon.ca",
+            heading: "Up In The Air Online Store",
             firstName: firstName,
             lastName: lastName,
             email: email,
@@ -65,7 +73,8 @@ router.post("/", (req, res) => {
             errorLName: errorLName,
             errorE: errorE,
             errorP: errorP,
-            errorPP: errorPP
+            errorPP: errorPP, 
+            c: c
         });
 
     }
@@ -83,7 +92,8 @@ router.post("/", (req, res) => {
             Congratulations and enjoy your journey with our website!<br>
             <br>
             Best regards,<br>
-            Customer Service Team`
+            Customer Service Team<br>
+            Up In The Air Online Store`
         };
 
         //Asynchornous operation (no exact executing time

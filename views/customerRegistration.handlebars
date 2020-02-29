@@ -3,24 +3,24 @@
 <form method="POST" action ="/customerRegistration">
     <h2>Create account</h2>
     <label for="firstName">First Name</label><br>  
-    <input type="text" id="firstName" name="firstName" value="{{firstName}}"> <br>
+    <input type="text" id="firstName" name="firstName" value="{{firstName}}"style="border-color: {{c.borderfn}};"> <br>
     <div class="errors">{{errorFName}}</div>
 
     <label for="lastName">Last Name</label><br>    
-    <input type="text" id="lastName" name="lastName" value="{{lastName}}"><br>
+    <input type="text" id="lastName" name="lastName" value="{{lastName}}" style="border-color: {{c.borderln}};"><br>
     <div class="errors">{{errorLName}}</div>
 
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" value="{{email}}"><br>
+    <input type="email" id="email" name="email" value="{{email}}" style="border-color: {{c.borderEmail}};"><br>
     <div class="errors">{{errorE}}</div>
 
     <label for="password">Password</label><br>
-    <input type="password" id="password" name="password" placeholder="At least 6 characters" value="{{password}}"><br>
+    <input type="password" id="password" name="password" placeholder="At least 6 characters" value="{{password}}" style="border-color: {{c.borderPwd}};"><br>
     <div class="errors">{{errorP}}</div>
     <label>Password must consist of at least 6 characters.</label><br>
 
     <label for="passwordAgain">Password Again</label><br>
-    <input type="password" id="passwordAgain" name="passwordAgain" value="{{passwordAgain}}"><br>
+    <input type="password" id="passwordAgain" name="passwordAgain" value="{{passwordAgain}}" style="border-color: {{c.borderPwdAgn}};"><br>
     <div class="errors">{{errorPP}}</div>
   
     <input type="submit" value="Create your Amazon account"><br>

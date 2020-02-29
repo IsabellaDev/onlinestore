@@ -4,7 +4,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.render("login", {
         title: "Login Page",
-        heading: "Amazon.ca"
+        heading: "Up In The Air Online Store"
     });
 });
 
@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     if ((errorE != "") || (errorP != "")) {
         res.render("login", {
             title: "Login Page",
-            heading: "Amazon.ca",
+            heading: "Up In The Air Online Store",
             errorE: errorE,
             errorP: errorP
         });

@@ -27,6 +27,15 @@ p{
     margin-bottom: 8pxs;
 }
 
+#heading{
+    text-align: left;
+    margin: 32px;
+    color: #344763;
+    font-family: 'Comic Sans MS Bold';
+    font-style: italic;
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
 main
 {
@@ -112,6 +121,7 @@ input
     border-radius: 5px;
     margin: 16px;
     font-size: 1.0rem;
+    
 } 
 
 input[type="submit"] {
