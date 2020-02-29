@@ -195,6 +195,15 @@ p {
     font-style: italic;
 }
 
+#welcome{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    color:#344763;
+}
+
 @media(max-width: 1024px) {
     #logo{
         width: 30%;

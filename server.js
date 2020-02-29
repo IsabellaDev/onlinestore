@@ -120,7 +120,7 @@ app.post("/customerRegistration", (req, res) => {
         //Asynchornous operation (no exact executing time
         sendEmail.send(msg)
         .then(()=>{
-            res.redirect("welcome"); // need to be CHANGED TO A DASHBOARD PAGE LATER!!!!!!!!/////
+            res.render("welcome"); // need to be CHANGED TO A DASHBOARD PAGE LATER!!!!!!!!/////
     
         })
         .catch(err=>{
