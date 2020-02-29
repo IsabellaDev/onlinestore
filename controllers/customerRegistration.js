@@ -50,10 +50,17 @@ router.post("/", (req, res) => {
     }
 
 
+    const {firstName, lastName, email, password, passwordAgain}=req.body;
+    
     if (errorFName != "" || errorLName != "" || errorE != "" || errorP != "" || errorPP != "") {
         res.render("customerRegistration", {
             title: "Customer Registration Page",
             heading: "Amazon.ca",
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            passwordAgain: passwordAgain,
             errorFName: errorFName,
             errorLName: errorLName,
             errorE: errorE,
@@ -63,7 +70,6 @@ router.post("/", (req, res) => {
 
     }
     else {
-        const {firstName, lastName, email, password}=req.body;
         const sendEmail=require('@sendgrid/mail');
         sendEmail.setApiKey(process.env.SEND_GRID_API_KEY);
 
