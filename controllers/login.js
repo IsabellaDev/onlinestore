@@ -10,11 +10,14 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     let errorE = "", errorP = "";
+    let c={colorEmail:"", colorPwd: ""};
     if (req.body.email == "") {
         errorE = "! Please enter a valid email";
+        c.colorEmail="red";
     }
     if (req.body.password == "") {
         errorP = "! Please enter your password";
+        c.colorPwd="red";
     }
 
     if ((errorE != "") || (errorP != "")) {
@@ -22,7 +25,8 @@ router.post("/", (req, res) => {
             title: "Login Page",
             heading: "Up In The Air Online Store",
             errorE: errorE,
-            errorP: errorP
+            errorP: errorP,
+            c: c
         });
     }
     else {

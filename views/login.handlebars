@@ -3,11 +3,11 @@
 <form method="POST" action ="/login">
     <h2>Sign-In</h2>
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="email"><br>
+    <input type="email" id="email" name="email" style="border-color: {{c.colorEmail}};"><br>
     <div class="errors">{{errorE}}</div>
 
     <label for="password">Password</label><br>
-    <input type="password" id="password" name="password" placeholder="At least 6 characters"><br>
+    <input type="password" id="password" name="password" style="border-color: {{c.colorPwd}};" placeholder="At least 6 characters"><br>
     <div class="errors">{{errorP}}</div>
 
     <label>Password must consist of at least 6 characters.</label><br>
