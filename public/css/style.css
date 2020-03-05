@@ -39,9 +39,9 @@ p{
 
 main
 {
-    padding:16px 32px;
     width: 95%;
     text-align: center;
+    margin: 0 auto;
 }
 header
 {
@@ -224,6 +224,7 @@ p {
     }
     #category {
         grid-template-columns: repeat(2, 1fr);
+        margin: 0px;
     }
     #bestSeller {
         grid-template-columns: repeat(3, 1fr);

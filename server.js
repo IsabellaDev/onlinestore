@@ -17,10 +17,6 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-//const generalController=require("./controller/general");
-//const 
-
-
 const generalController = require("./controllers/general");
 const customerRegistrationController = require("./controllers/customerRegistration");
 const loginController=require("./controllers/login");
@@ -28,7 +24,6 @@ const loginController=require("./controllers/login");
 app.use("/", generalController);
 app.use("/customerRegistration", customerRegistrationController);
 app.use("/login", loginController);
-
 
 
 const PORT = process.env.PORT;
