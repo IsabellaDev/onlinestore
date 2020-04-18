@@ -1,9 +1,9 @@
 const express = require("express"); //this imports the express package that was installed within your application
 const exphbs = require("express-handlebars");
 
-
-
 const mongoose = require('mongoose');//import mongoose 
+
+const fileUpload = require('express-fileupload');
 
 const session = require('express-session');
 
@@ -23,6 +23,30 @@ app.use(bodyParser.urlencoded({ extended: false }))
 const generalController = require("./controllers/general");
 const customerRegistrationController = require("./controllers/customerRegistration");
 const userController = require("./controllers/user");
+const productController = require("./controllers/product.js");
+
+
+
+app.use((req,res,next)=>{
+
+    if(req.query.method=="PUT")
+    {
+        req.method="PUT"
+    }
+
+    else if(req.query.method=="DELETE")
+    {
+        req.method="DELETE"
+    }
+
+    next();
+});
+
+
+
+
+
+app.use(fileUpload());
 
 
 app.use(session({
@@ -44,7 +68,7 @@ app.use(session({
 app.use("/", generalController);
 app.use("/customerRegistration", customerRegistrationController);
 app.use("/user", userController);
-
+app.use("/products", productController);
 
 //synchronous operation 
 mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })

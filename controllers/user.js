@@ -3,6 +3,8 @@ const router = express.Router();
 
 const loginModel = require('../models/customerRegistration');
 
+const productModel = require("../models/product");
+
 const bcrypt = require("bcryptjs");
 
 const isAuthenticated = require("../middleware/authentication");
@@ -80,6 +82,7 @@ router.post("/", (req, res) => {
 });
 
 router.get("/profile", isAuthenticated, dashboardLoader);
+
 
 router.get("/logout",(req,res)=>{
     req.session.destroy();

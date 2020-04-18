@@ -114,7 +114,7 @@ form > label {
 }
 
 
-input
+#loginForm input, #registrationForm input
 {
     width: 60%;
     height: 5vh;
@@ -155,13 +155,13 @@ banner {
  
 }
 
-#list{
+.list{
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-#list > div{
+.list > div{
     background-color: #fff;
     margin: 8px;
     
@@ -212,6 +212,11 @@ p {
     align-items: center;
     justify-items: center;
     color:#344763;
+}
+
+.product-detail {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 @media(max-width: 1024px) {

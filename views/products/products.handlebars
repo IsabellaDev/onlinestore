@@ -2,6 +2,18 @@
     <h2 style="margin-top: 20px">Amazon BestSellers</h2>
     <h4>Our most popular products based on sales. Updated hourly.</h4>
 </banner>
+
+    <form method="POST" action="/products/search">
+        <label>Search By Category</label>
+        <select name="product-search">
+            <option value="all">All products</option>
+            <option value="Smart Home">Smart Home</option>
+            <option value="Devices">Devices</option>
+            <option value="Books">Books</option>
+        </select>
+        <input type="submit" value="Search">
+    </form> <br><br>
+
 <div id="pros">
     <div id="sidebar">
         <h4><a href="/products">All Products</a></h4>
@@ -11,12 +23,12 @@
             <a href="/">Baby's Clothing</a>
     </div>
         
-    <div id="list">
+    <div class="list">
         {{#each list}}
         <div class="listDetails">
-            <img src="{{this.src}}"><br>
+            <img src="img/{{this.src}}"><br>
 
-            <a href=""><p>{{this.des}}</p></a>
+            <a href=""><p>{{this.desc}}</p></a>
             <p>CDN$ {{this.price}}</p>
            
         </div>

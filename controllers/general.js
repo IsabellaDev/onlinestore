@@ -14,12 +14,5 @@ router.get("/", (req, res) => {
 
 });
 
-router.get("/products", (req, res) => {
-    res.render("products", {
-        title: "Products Page",
-        heading: "Up In The Air Online Store",
-        list: model.displayProductList()
-    });
-});
 
 module.exports=router;

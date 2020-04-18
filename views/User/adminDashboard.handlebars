@@ -1,7 +1,44 @@
 <div id="admin">
 
-
-<p>CLERK MODE ON NOW</p>
-
-<h3>Hi worker {{user.firstName}} {{user.lastName}}, welcome back!</h3>
+    <h3>Hi Admin {{user.firstName}} {{user.lastName}}, welcome back!</h3>
 </div>
+<br><br>
+<section id="product management">
+
+    <a href="/products/add">Create a Product</a>
+
+    <form method="POST" action="/products/search">
+        <label>Search By Category</label>
+        <select name="product-search">
+            <option value="all">All products</option>
+            <option value="Smart Home">Smart Home</option>
+            <option value="Devices">Devices</option>
+            <option value="Books">Books</option>
+        </select>
+        <input type="submit" value="Search">
+    </form> <br><br>
+
+    <div class="list">
+
+        {{#each products}}
+        <div>
+            <p>{{this.name}}</p>
+            <img src="../img/{{this.src}}"><br>
+            <a href="">
+                <p>{{this.desc}}</p>
+            </a>
+            <p>CDN$ {{this.price}}</p>
+
+            <a href="/products/update/{{this.id}}" class="update-delete-button">Update</a> &nbsp;&nbsp;&nbsp;
+            <a href="/products/delete/{{this.id}}?method=DELETE" class="update-delete-button">Delete</a>
+
+        </div>
+
+        {{/each}}
+
+    </div>
+
+
+
+
+</section>

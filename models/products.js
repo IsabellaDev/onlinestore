@@ -45,3 +45,4 @@ fakeDB.setCategories();
 fakeDB.setBestsellers();
 fakeDB.setProductList();
 module.exports=fakeDB;
+
