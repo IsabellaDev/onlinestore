@@ -7,17 +7,6 @@
 
     <a href="/products/add">Create a Product</a>
 
-    <form method="POST" action="/products/search">
-        <label>Search By Category</label>
-        <select name="product-search">
-            <option value="all">All products</option>
-            <option value="Smart Home">Smart Home</option>
-            <option value="Devices">Devices</option>
-            <option value="Books">Books</option>
-        </select>
-        <input type="submit" value="Search">
-    </form> <br><br>
-
     <div class="list">
 
         {{#each products}}
@@ -27,6 +16,9 @@
             <a href="">
                 <p>{{this.desc}}</p>
             </a>
+            {{#if this.hot}}
+            <p>BestSellers</p>
+            {{/if}}
             <p>CDN$ {{this.price}}</p>
 
             <a href="/products/update/{{this.id}}" class="update-delete-button">Update</a> &nbsp;&nbsp;&nbsp;
