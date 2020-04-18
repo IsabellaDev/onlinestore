@@ -6,6 +6,7 @@
     <form method="POST" action="/products/search">
         <label>Search By Category</label>
         <select name="search">
+            <option value="">All Products</option>
             <option value="Smart Home">Smart Home</option>
             <option value="Devices">Devices</option>
             <option value="Books">Books</option>
@@ -27,7 +28,7 @@
         <div class="listDetails">
             <img src="../img/{{this.src}}"><br>
             <p>{{this.name}}</p>
-            <a href=""><p>{{this.desc}}</p></a>
+            <a href="/products/detail/{{this._id}}"><p>{{this.desc}}</p></a>
             {{#if this.hot}}
                 <p>BestSellers</p>
             {{/if}}

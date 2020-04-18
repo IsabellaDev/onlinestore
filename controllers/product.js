@@ -71,21 +71,41 @@ router.post("/add", isAuthenticated, isAdmin, (req, res) => {
 
 router.post("/search", (req, res) => {
 
-    productModel.find({category: req.body.search})
-    .then((products)=>{
-        const prod=products.map(product=>{
-            return {
-                name: product.name,
-                price: product.price,
-                desc: product.desc,
-                hot: product.hot,
-                src: product.src
-            }
-        });
-        res.render("products/products", {
-            list: prod
-        });
-    })
+    if (req.body.search=="") {
+        productModel.find()
+        .then((products)=>{
+            const prod=products.map(product=>{
+                return {
+                    name: product.name,
+                    price: product.price,
+                    desc: product.desc,
+                    hot: product.hot,
+                    src: product.src
+                }
+            });
+            res.render("products/products", {
+                list: prod
+            });
+        })
+    }
+    else {
+
+        productModel.find({category: req.body.search})
+        .then((products)=>{
+            const prod=products.map(product=>{
+                return {
+                    name: product.name,
+                    price: product.price,
+                    desc: product.desc,
+                    hot: product.hot,
+                    src: product.src
+                }
+            });
+            res.render("products/products", {
+                list: prod
+            });
+        })
+    }
 });
 
 router.get("/update/:id", (req, res) => {
@@ -134,6 +154,25 @@ router.delete("/delete/:id",(req,res)=>{
     .catch(err=>`Error occured when deleting product info from database: ${err}`);
 })
 
+router.get("/detail/:id",(req,res)=>{
+    console.log(req.params.id);
+    productModel.findById(req.params,id)
+    .then((product)=>{
+        const { _id, name, price, desc, category, quantity, hot, src } = product;
+        res.render("products/detail", {
+            _id,
+            name,
+            price,
+            desc,
+            category,
+            quantity,
+            hot,
+            src
+        });
+    })
+    .catch(err => `Error happened when trying to extract product detail from database: ${err}`);
+    
+});
 
 
 
