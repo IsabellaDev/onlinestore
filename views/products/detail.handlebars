@@ -6,19 +6,20 @@
         <img src="../../public/img/{{src}}">
     </div>
     <div id="detail">
-        <p name="name">{{name}}</p>
-        <p name="price">{{price}}</p>
+        <form method="POST" action="/orders/add">
+        <input type="text" name="name" readonly value="{{name}}"><br><br>
         <a href="/products/detail/{{this.id}}">{{this.desc}}</a>
         {{#if hot}}
-        <p>BestSellers</p>
+        <h6>BestSellers</h6>
         {{/if}}
-        <form method="POST" action="/orders/add"></form>
-        <p>CDN$ {{price}}</p>
-        <p>Now {{quantity}} left in stock.</p>
-        <p>Quantity:
-            <input type="number" name="quantity" value="1" min="0" max="{{quantity}}">
-        </p>
+        
+        CDN $ <input type="number" name="price" readonly value="{{price}}"><br><br>
+        Quantity: <input type="number" name="qty" min="0"> 
+        
+        <h6>Now {{quantity}} left in stock.</h6>
+
         <input type="submit" value="Add To Cart"><br><br>
+        
         <a href="/orders/cart" style="text-decoration: underline;">Go To Your Cart</a>
         </form>
 

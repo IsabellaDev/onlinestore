@@ -1,1 +1,12 @@
-<p>Shopping Cart</p>
+<p>Hi {{user.firstName}} {{user.lastName}},</p>
+     
+    <p>You have ordered: </p>
+
+    {{#each cart}}
+    <p>{{this.name}}</p>
+    <p>{{this.price}}</p>
+    <p>{{this.quantity}}</p>
+    {{/each}}
+
+    <button onclick="window.location.href='/orders/checkout';">Check Out</button>
+
