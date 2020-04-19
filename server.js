@@ -24,7 +24,7 @@ const generalController = require("./controllers/general");
 const customerRegistrationController = require("./controllers/customerRegistration");
 const userController = require("./controllers/user");
 const productController = require("./controllers/product.js");
-
+const orderController = require("./controllers/cart");
 
 
 app.use((req,res,next)=>{
@@ -69,6 +69,7 @@ app.use("/", generalController);
 app.use("/customerRegistration", customerRegistrationController);
 app.use("/user", userController);
 app.use("/products", productController);
+app.use("/orders",orderController);
 
 //synchronous operation 
 mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })

@@ -5,7 +5,7 @@
     <input type="text" name="name" id="name" value="{{name}}"><br><br>
 
     <label>Product Price</label>
-    <input type="number" name="price" id="price" value="{{price}}"><br><br>
+    <input type="number" name="price" id="price" value="{{price}}" step="0.01" min="0"><br><br>
 
     <label>Description</label>
     <textarea name="desc" id="desc">{{desc}}</textarea><br><br>
@@ -14,7 +14,7 @@
     <input type="text" name="category" value="{{category}}"><br><br>
 
     <label>Quantity</label>
-    <input type="number" name="quantity" id="quantity" value="{{quantity}}"><br><br>
+    <input type="number" name="quantity" id="quantity" value="{{quantity}}" min="0"><br><br>
 
     <labe>Bestseller?</labe>
     <input type="radio" name="hot" id="hot" value="true">YES

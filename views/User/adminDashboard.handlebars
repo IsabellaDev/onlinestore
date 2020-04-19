@@ -17,10 +17,10 @@
                 <p>{{this.desc}}</p>
             </a>
             {{#if this.hot}}
-            <p>BestSellers</p>
+            <p>BestSellers!</p>
             {{/if}}
             <p>CDN$ {{this.price}}</p>
-
+            <p>Quantity in Stock: {{this.quantity}}</p>
             <a href="/products/update/{{this.id}}" class="update-delete-button">Update</a> &nbsp;&nbsp;&nbsp;
             <a href="/products/delete/{{this.id}}?method=DELETE" class="update-delete-button">Delete</a>
 

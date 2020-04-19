@@ -11,7 +11,9 @@ const dashboardLoader = (req,res)=>{
                     name: product.name,
                     src: product.src,
                     desc: product.desc,
-                    price: product.price
+                    price: product.price,
+                    quantity: product.quantity,
+                    hot: product.hot
                 }
             });
             res.render("User/adminDashboard", {

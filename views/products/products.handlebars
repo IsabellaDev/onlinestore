@@ -28,9 +28,9 @@
         <div class="listDetails">
             <img src="../img/{{this.src}}"><br>
             <p>{{this.name}}</p>
-            <a href="/products/detail/{{this._id}}"><p>{{this.desc}}</p></a>
+            <p><a href="/products/detail/{{this.id}}">{{this.desc}}</a></p>
             {{#if this.hot}}
-                <p>BestSellers</p>
+                <p>BestSellers!</p>
             {{/if}}
             <p>CDN$ {{this.price}}</p>
            

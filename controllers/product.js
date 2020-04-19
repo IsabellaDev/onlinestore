@@ -76,6 +76,7 @@ router.post("/search", (req, res) => {
         .then((products)=>{
             const prod=products.map(product=>{
                 return {
+                    id: product._id,
                     name: product.name,
                     price: product.price,
                     desc: product.desc,
@@ -94,6 +95,7 @@ router.post("/search", (req, res) => {
         .then((products)=>{
             const prod=products.map(product=>{
                 return {
+                    id: product._id,
                     name: product.name,
                     price: product.price,
                     desc: product.desc,
@@ -155,10 +157,10 @@ router.delete("/delete/:id",(req,res)=>{
 })
 
 router.get("/detail/:id",(req,res)=>{
-    console.log(req.params.id);
-    productModel.findById(req.params,id)
+
+    productModel.findById(req.params.id)
     .then((product)=>{
-        const { _id, name, price, desc, category, quantity, hot, src } = product;
+        const { _id, name, price, desc, category, quantity, hot, src} = product;
         res.render("products/detail", {
             _id,
             name,
